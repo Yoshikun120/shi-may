@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>shi ♥ may</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&family=Playfair+Display:wght@500;600&display=swap');
+
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:Kanit,system-ui,sans-serif;background:#0d0d10;color:#fff}
+body{overflow-x:hidden}
+.page{min-height:100svh;display:flex;align-items:center;justify-content:center;position:relative;padding:30px 20px}
+#home{background:radial-gradient(circle at 50% 35%,#39222d 0,#171318 35%,#09090b 80%)}
+#memories{display:none;background:linear-gradient(180deg,#111116,#09090b);padding-top:42px;padding-bottom:52px}
+.glow{position:absolute;width:240px;height:240px;border-radius:50%;filter:blur(70px);opacity:.25;background:#e98ba9;top:18%;left:50%;transform:translateX(-50%)}
+.content{position:relative;z-index:2;width:min(430px,100%);text-align:center}
+.eyebrow{font-size:12px;letter-spacing:4px;text-transform:uppercase;opacity:.65;margin-bottom:12px}
+.title{font-family:'Playfair Display',serif;font-size:50px;line-height:1;margin:0 0 20px}
+.story{font-size:15px;line-height:2;color:#e9e1e5;margin:0 auto 28px;font-weight:300}
+.story span{display:block;opacity:0;transform:translateY(10px);animation:rise .8s forwards}
+.story span:nth-child(2){animation-delay:.18s}.story span:nth-child(3){animation-delay:.36s}
+@keyframes rise{to{opacity:1;transform:none}}
+.open-btn{border:0;border-radius:999px;padding:14px 25px;background:#fff;color:#171318;font:500 15px Kanit;box-shadow:0 12px 40px rgba(255,255,255,.12);cursor:pointer;transition:.25s;animation:pulse 2.8s infinite}
+.open-btn:hover{transform:translateY(-2px)}
+@keyframes pulse{0%,100%{box-shadow:0 12px 40px rgba(255,255,255,.10)}50%{box-shadow:0 12px 55px rgba(255,150,185,.30)}}
+.credits{position:absolute;bottom:26px;left:0;right:0;text-align:center;font-size:11px;letter-spacing:1px;color:#9d979b}
+.heart{position:absolute;font-size:18px;opacity:.45;animation:float 7s linear infinite}
+.h1{left:14%;bottom:22%;animation-delay:0s}.h2{right:16%;top:22%;animation-delay:2s}.h3{left:30%;top:12%;animation-delay:4s}
+@keyframes float{0%{transform:translateY(25px) scale(.8);opacity:0}20%{opacity:.45}100%{transform:translateY(-170px) scale(1.15);opacity:0}}
+
+.back{position:absolute;top:18px;left:18px;border:1px solid #ffffff22;background:#ffffff0d;color:#fff;border-radius:50%;width:38px;height:38px;cursor:pointer}
+.mem-title{font-family:'Playfair Display',serif;font-size:39px;margin:5px 0 8px}
+.ig{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.ig a{color:#e8dce1;text-decoration:none;font-size:13px;border-bottom:1px solid #ffffff33;padding-bottom:2px}
+.ig a:hover{color:#fff}
+.card{position:relative;overflow:hidden;border-radius:24px;background:#17171c;box-shadow:0 20px 70px rgba(0,0,0,.5);aspect-ratio:3/4}
+.card img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .55s,transform 4.5s ease}
+.fade{animation:photoFade .6s ease}
+@keyframes photoFade{from{opacity:.2;transform:scale(1.025)}to{opacity:1;transform:scale(1)}}
+.caption{margin:16px 6px 7px;font-size:16px}
+.subcaption{font-size:12px;color:#9e999e;font-weight:300}
+.dots{display:flex;justify-content:center;gap:6px;margin:17px 0 0}
+.dot{width:6px;height:6px;border-radius:50%;background:#4b464b;transition:.3s}
+.dot.active{width:18px;border-radius:99px;background:#fff}
+.controls{display:flex;justify-content:center;gap:10px;margin-top:18px}
+.ctrl{background:#ffffff0d;color:#fff;border:1px solid #ffffff18;border-radius:99px;padding:9px 15px;font:300 12px Kanit;cursor:pointer}
+.music-note{font-size:11px;color:#9e999e;margin-top:16px}
+</style>
+</head>
+<body>
+
+<section id="home" class="page">
+  <div class="glow"></div>
+  <div class="heart h1">♡</div><div class="heart h2">♥</div><div class="heart h3">♡</div>
+  <div class="content">
+    <div class="eyebrow">our little story</div>
+    <h1 class="title">shi ♥ may</h1>
+    <p class="story">
+      <span>รู้จักกันในปี 68</span>
+      <span>เป็นแฟนกันในปี 69</span>
+      <span>และกำลังข้ามปีต่อๆ ไปด้วยกันทุกปี 🤍</span>
+    </p>
+    <button class="open-btn" onclick="openMemories()">รูปกากๆกับคู่โหดๆ 🔥❤️</button>
+  </div>
+  <div class="credits">สร้างโดย delshi.que</div>
+</section>
+
+<section id="memories" class="page">
+  <button class="back" onclick="goHome()">×</button>
+  <div class="content">
+    <div class="eyebrow">memories</div>
+    <h2 class="mem-title">shi ♥ may</h2>
+    <div class="ig">
+      <a href="https://www.instagram.com/delshi.que/" target="_blank" rel="noopener">@delshi.que</a>
+      <span>♡</span>
+      <a href="https://www.instagram.com/momay2_10/" target="_blank" rel="noopener">@momay2_10</a>
+    </div>
+
+    <div class="card">
+      <img id="photo" src="images/1.jpeg" alt="ความทรงจำของเรา">
+    </div>
+    <div class="caption" id="caption">มื้อเล็ก ๆ และช่วงเวลาธรรมดาที่น่าจำ</div>
+    <div class="subcaption" id="counter">01 / 10</div>
+    <div class="dots" id="dots"></div>
+
+    <div class="controls">
+      <button class="ctrl" onclick="prev()">‹ ก่อนหน้า</button>
+      <button class="ctrl" onclick="next()">ถัดไป ›</button>
+    </div>
+    <div class="music-note">♫ เพลงของเรา — จะเล่นหลังจากกดปุ่มเปิด</div>
+  </div>
+  <div class="credits">สร้างโดย delshi.que</div>
+</section>
+
+<audio id="music" loop preload="auto"></audio>
+
+<script>
+const items = [
+  ["images/1.jpeg","นั่งเล่นด้วยกัน และแอบเก็บโมเมนต์เล็ก ๆ ไว้ 📱"],
+  ["images/2.jpeg","มื้ออร่อย ๆ ที่ได้กินด้วยกัน 🍜"],
+  ["images/3.jpeg","ไปทะเลด้วยกัน 🌊"],
+  ["images/4.jpeg","อยู่ใกล้ ๆ กันในวันธรรมดา 🤍"],
+  ["images/5.jpeg","เดินเลือกของด้วยกัน แล้วก็ได้ของน่ารักกลับมา 🧸"],
+  ["images/6.jpeg","วันสบาย ๆ กับรอยยิ้มของเธอ ☀️"],
+  ["images/7.jpeg","คู่โหดของเราเอง 555 😂"],
+  ["images/8.jpeg","รูปเก่า ๆ ที่เห็นแล้วก็ยังยิ้มได้ 📸"],
+  ["images/9.jpeg","คุยกันผ่านหน้าจอ แต่ความคิดถึงยังเต็มจอ 💬"],
+  ["images/10.jpeg","เจอเพื่อนใหม่ระหว่างทางด้วย 🐈🐈🐈"]
+];
+let index=0, timer=null;
+
+function buildDots(){
+  const d=document.getElementById('dots');
+  d.innerHTML='';
+  items.forEach((_,i)=>{
+    const el=document.createElement('div');
+    el.className='dot'+(i===0?' active':'');
+    d.appendChild(el);
+  });
+}
+function render(dir=1){
+  const img=document.getElementById('photo');
+  img.classList.remove('fade'); void img.offsetWidth; img.classList.add('fade');
+  img.src=items[index][0];
+  document.getElementById('caption').textContent=items[index][1];
+  document.getElementById('counter').textContent=String(index+1).padStart(2,'0')+' / 10';
+  [...document.querySelectorAll('.dot')].forEach((x,i)=>x.classList.toggle('active',i===index));
+}
+function next(){index=(index+1)%items.length;render(1);resetTimer()}
+function prev(){index=(index-1+items.length)%items.length;render(-1);resetTimer()}
+function resetTimer(){clearInterval(timer);timer=setInterval(()=>{index=(index+1)%items.length;render()},4500)}
+function fadeInMusic(){
+  const music=document.getElementById('music');
+  const startVolume=0.08;   // เบา แต่ยังได้ยิน
+  const targetVolume=0.72;   // ระดับเสียงปกติของเว็บ (ปรับตามเสียงเครื่องได้)
+  const duration=4200;       // 4.2 วินาที
+  const startedAt=performance.now();
+
+  music.volume=startVolume;
+  const step=(now)=>{
+    const progress=Math.min((now-startedAt)/duration,1);
+    // ease-out: ช่วงแรกนุ่ม แล้วค่อย ๆ เข้าสู่เสียงปกติ
+    const eased=1-Math.pow(1-progress,2);
+    music.volume=startVolume+(targetVolume-startVolume)*eased;
+    if(progress<1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+
+function openMemories(){
+  document.getElementById('home').style.display='none';
+  document.getElementById('memories').style.display='flex';
+  window.scrollTo(0,0);
+  const music=document.getElementById('music');
+  music.src='music.mp3';
+  music.currentTime=0;
+  music.volume=0.08;
+  music.play().then(()=>fadeInMusic()).catch(()=>{});
+  buildDots(); resetTimer();
+}
+function goHome(){
+  clearInterval(timer);
+  document.getElementById('music').pause();
+  document.getElementById('music').currentTime=0;
+  document.getElementById('memories').style.display='none';
+  document.getElementById('home').style.display='flex';
+  window.scrollTo(0,0);
+}
+buildDots();
+</script>
+</body>
+</html>
